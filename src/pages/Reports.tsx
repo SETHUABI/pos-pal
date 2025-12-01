@@ -50,14 +50,16 @@ export default function Reports() {
     switch (selectedPeriod) {
       case 'today':
         return bills.filter(bill => new Date(bill.createdAt) >= today);
-      case 'week':
+      case 'week': {
         const weekAgo = new Date(today);
         weekAgo.setDate(weekAgo.getDate() - 7);
         return bills.filter(bill => new Date(bill.createdAt) >= weekAgo);
-      case 'month':
+      }
+      case 'month': {
         const monthAgo = new Date(today);
         monthAgo.setMonth(monthAgo.getMonth() - 1);
         return bills.filter(bill => new Date(bill.createdAt) >= monthAgo);
+      }
       default:
         return bills;
     }
