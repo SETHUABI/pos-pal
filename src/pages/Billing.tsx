@@ -326,7 +326,7 @@ export default function Billing() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="payment-method">Payment Method</Label>
-                      <Select value={paymentMethod} onValueChange={(value: any) => setPaymentMethod(value)}>
+                      <Select value={paymentMethod} onValueChange={(value: 'cash' | 'card' | 'upi') => setPaymentMethod(value)}>
                         <SelectTrigger>
                           <SelectValue />
                         </SelectTrigger>
